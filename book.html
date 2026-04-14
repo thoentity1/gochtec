@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Now | Gochtec Steel and Projects (Pty) Ltd</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background:#0f0f0f;
+    color:white;
+    font-family:Poppins, sans-serif;
+    margin:0;
+    text-align:center;
+}
+
+header {
+    padding:20px;
+    background:#111;
+    border-bottom:2px solid #d4af37;
+}
+
+header h1 {
+    color:#d4af37;
+}
+
+nav {
+    padding:10px;
+}
+
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+}
+
+.section {
+    padding:50px 20px;
+}
+
+form {
+    max-width:400px;
+    margin:auto;
+    text-align:left;
+}
+
+input, select {
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+}
+
+button {
+    width:100%;
+    padding:15px;
+    background:#d4af37;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover {
+    opacity:0.9;
+}
+
+footer {
+    margin-top:40px;
+    padding:20px;
+    background:#111;
+    border-top:2px solid #d4af37;
+}
+</style>
+
+<script>
+function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var date = document.getElementById("date").value;
+    var time = document.getElementById("time").value;
+    var location = document.getElementById("location").value;
+    var service = document.getElementById("service").value;
+
+    var message = "Booking Request:%0A"
+        + "Name: " + name + "%0A"
+        + "Service: " + service + "%0A"
+        + "Date: " + date + "%0A"
+        + "Time: " + time + "%0A"
+        + "Location: " + location;
+
+    var whatsappURL = "https://wa.me/27832142201?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Gochtec Steel and Projects (Pty) Ltd</h1>
+    <p>Book Your Service</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">What we do</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="section">
+    <h2>Fill in your details</h2>
+
+    <form onsubmit="event.preventDefault(); sendToWhatsApp();">
+
+        <label>Name</label>
+        <input type="text" id="name" required>
+
+        <label>Select Service</label>
+        <select id="service" required>
+            <option value="">Choose a service</option>
+            <option>Custome Steel Gates</option>
+            <option>Steel Staircases</option>
+            <option>Welding and Assesmbly</option>
+        </select>
+
+        <label>Date</label>
+        <input type="date" id="date" required>
+
+        <label>Time</label>
+        <input type="time" id="time" required>
+
+        <label>Location</label>
+        <input type="text" id="location" placeholder="Your address" required>
+
+        <button type="submit">Confirm Booking</button>
+
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Gochtec Steel and Projects (Pty) Ltd</p>
+</footer>
+
+</body>
+</html>
